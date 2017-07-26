@@ -639,12 +639,30 @@ width: 10px;
 	width:100%;
 }
 
+.recruit-big-title-area{
+	background: url(../img/joinus.jpg) center center no-repeat;
+	background-size:cover;
+	width:100%;
+}
+
 .single-product-area .zigzag-bottom {background-color: #333333}
 
-.single-product-area, .single-logo-area {
+.single-product-area, .single-logo-area, .single-recruit-area {
   padding: 50px;
   text-align:center;
   background:#fff;
+}
+
+.single-recruit-area{
+	padding: 50px 0px 20px 0px;
+}
+
+.single-recruit-area ul li {
+	width:40%;
+	min-width:200px;
+	border-bottom:2px solid #e1e1e1;
+	padding:20px;
+	margin:0 auto;
 }
 
 .single-product-area .row p{
