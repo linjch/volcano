@@ -100,10 +100,14 @@
         </div>
     </div>
 
-	<div id="playvedio" class="reveal-modal">
+	<div id="playvideo" class="reveal-modal">
 		<video src="" controls="controls">
 			您的浏览器不支持Video标签
 		</video>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<div id="playimage" class="reveal-modal">
+		<img width="100%" height="100%"/>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 
@@ -167,12 +171,12 @@
 				
 				'video/阿修罗_1.mp4',
 				'video/阿修罗2.mov',
-				'video/',
-				'video/',
-				'video/',
+				'video/吕布.jpg',
+				'video/貂蝉 变身后.jpg',
+				'video/貂蝉 变身前.jpg',
 				
-				'video/',
-				'video/'
+				'video/貂蝉变身前3-细化22.jpg',
+				'video/貂蝉变身后后后1117-恢复的.jpg'
 			];
 			var video_name = [
 				'龙武2','天天枪战','迷雾','思美人','天天炫斗剪辑',
@@ -190,23 +194,26 @@
 				if(j >= images_count){
 					$('.product-list ul').append('<li></li>');
 				}else{
-					$('.product-list ul').append('<li class="single-product"><img src="'+images_url[j]+'"/>'
-						+'<div class="product-hover" id="product-hover'+j+'">'
-						+'<span>'+video_name[j]+'</span>'
-						+'<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvedio"/>'
-						+'</div></li>');
+					if('' != video_url[j] && undefined != video_url[j]){
+						var ul_append = '';
+						ul_append += '<li class="single-product"><img src="'+images_url[j]+'"/>'
+								+'<div class="product-hover" id="product-hover'+j+'">'
+								+'<span>'+video_name[j]+'</span>';
+						if(video_url[j].toLowerCase().lastIndexOf(".jpg") > -1
+							|| video_url[j].toLowerCase().lastIndexOf(".jpeg") > -1
+							|| video_url[j].toLowerCase().lastIndexOf(".png") > -1
+							|| video_url[j].toLowerCase().lastIndexOf(".gif") > -1){
+							ul_append += '<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playimage"/>';
+						}else{
+							ul_append += '<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvideo"/>';
+						}
+						ul_append += '</div></li>';
+						$('.product-list ul').append(ul_append);
+					}else{
+						$('.product-list ul').append('<li><img src="'+images_url[j]+'"/></li>');
+					}
 				}
 			}
-			/*
-			if(0 != Number(images_count) % 5){
-				var the_width = Number(Number(total_count) - Number(images_count)) * images_height;
-				$('.product-list ul').append('<div style="border:1px solid red;position:absolute;text-align:center;font-weight:bold;color:#000;right:0;bottom:;width:'+the_width+'px;height:'+images_height+'px;line-height:'+images_height+'px">更多作品敬请期待</div>');
-			}*/
-			//载入图片
-			/*
-			$.each(images_url,function(key,value){
-				$('.product-list ul li').eq(key).css('background-image','url('+value+')');
-			});*/
 			$('.product-list ul li img').css('width','100%');
 			$('.product-list ul li img').css('height','100%');
 								
@@ -234,11 +241,23 @@
 			$('.product-hover input[type="image"]').click(function(e){
 				var index = this.id.replace('imgbutton','');
 				if('' != video_name[index]){
-					$("#playvedio video").attr("src", video_url[index]);
+					if(video_url[index].toLowerCase().lastIndexOf(".jpg") > -1
+						|| video_url[index].toLowerCase().lastIndexOf(".jpeg") > -1
+						|| video_url[index].toLowerCase().lastIndexOf(".png") > -1
+						|| video_url[index].toLowerCase().lastIndexOf(".gif") > -1){
+						$("#playimage img").attr("src", video_url[index]);
+						getImageWidthAndHeight(video_url[index], function(w, h){
+							var width = $("#playimage").width();
+							var heigth = h * (width / w);
+							$("#playimage").height(heigth + "px");
+						});
+					}else{
+						$("#playvideo video").attr("src", video_url[index]);
+						$("#playvideo video").attr("autoplay","true");
+					}
 					e.preventDefault();
 					var modalLocation = $(this).attr('data-reveal-id');
 					$('#'+modalLocation).reveal($(this).data());
-					$("#playvedio video").attr("autoplay","true");
 				}
 			});
 			
@@ -256,6 +275,17 @@
 			});
 		});
 			
+		function getImageWidthAndHeight(url, callback){
+			var img = new Image();
+			img.src = url;
+			if(img.complete){
+				callback(img.width, img.height);
+			}else{
+				img.onload = function(){
+					callback(img.width, img.height);
+				}
+			}
+		}
 	</script>
 	<script type="text/javascript" src="js/jquery.reveal.js"></script>
   </body>

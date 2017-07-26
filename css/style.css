@@ -636,6 +636,8 @@ width: 10px;
 
 .single-product-area, .single-logo-area {
   padding: 50px;
+  text-align:center;
+  background:#fff;
 }
 
 .single-product-area .row p{

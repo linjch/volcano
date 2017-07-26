@@ -113,7 +113,7 @@
 					}		
 				}
 				modal.unbind('reveal:close');
-				$("#playvedio video")[0].pause();	//暂停视屏播放
+				$("#playvideo video")[0].pause();	//暂停视屏播放
 			});     
    	
 /*---------------------------
