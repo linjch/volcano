@@ -621,6 +621,7 @@ width: 10px;
 
 .product-big-title-area {
 	background: url(../img/product_top.jpg) center center no-repeat;
+	background-size:cover;
 	width:100%;
 }
 
@@ -630,6 +631,12 @@ width: 10px;
   font-weight: 200;
   margin: 0;
   padding: 50px 0;color: #fff;
+}
+
+.contact-big-title-area{
+	background: url(../img/contactus.jpg) center center no-repeat;
+	background-size:cover;
+	width:100%;
 }
 
 .single-product-area .zigzag-bottom {background-color: #333333}
