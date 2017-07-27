@@ -492,6 +492,13 @@ z-index: 9;
 	background:#333;
 }
 
+.footer-top-area button a{
+	color:#ffb900;
+}
+.footer-top-area button a:hover{
+	text-decoration:none;
+}
+
 .footer-bottom-area {background: #000;color: #fff}
 .footer-about-us span {
   color: #1abc9c;
@@ -657,12 +664,30 @@ width: 10px;
 	padding: 50px 0px 20px 0px;
 }
 
+.single-recruit-area .recruit-list{
+	margin-top:-50px;
+	margin-bottom:-30px;
+}
+
 .single-recruit-area ul li {
 	width:40%;
 	min-width:200px;
 	border-bottom:2px solid #e1e1e1;
-	padding:20px;
+	padding-top:20px;
+	padding-bottom:10px;
 	margin:0 auto;
+}
+
+.single-recruit-area ul li div{
+	font-size:12px;
+	text-align: left;
+	display:none;
+}
+
+.single-recruit-area ul li a img{
+	width:18px;
+	height:10px;
+	cursor:pointer;
 }
 
 .single-product-area .row p{

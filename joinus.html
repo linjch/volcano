@@ -76,7 +76,7 @@
 		</div>
 	</div>
 	
-	<div class="single-recruit-area">
+	<div class="single-recruit-area recruit-list">
         <div class="container">
 			<div class="row recruit-list" id="recruit-list">
 				<ul></ul>
@@ -101,7 +101,7 @@
             <div class="row">
                 <h4>“热爱如火，稳健如山”</h4>
 				<h4>让我们一起创建出更优秀有动画作品</h4>
-				<button>立即联系</button>
+				<button><a href="contact.html">立即联系</a></button>
             </div>
         </div>
     </div>
@@ -110,25 +110,47 @@
 
   <script src="js/recruit.js" charset="gbk" type="text/javascript"></script>
   <script>
-	$('.recruit-big-title-area').height($('.recruit-big-title-area').width() * 0.2640625);
-	
-	for(var i = 0; i < recruit_json.length; i++){
-		var recruit_obj = recruit_json[i];
-		var li = '<li>'
-			+ '<p style="font-size:16px;font-weight:bold">' + recruit_obj.recruit_name + '</p>'
-			+ '<p style="font-size:12px">' + recruit_obj.recruit_name_en + '</p>'
-			+ '<p style="font-size:10px">部门：' + recruit_obj.dept + '&nbsp;|&nbsp;' + recruit_obj.recruit_num + '人</p>'
-			+ '<div>';
-		for(var j = 0; j < recruit_obj.recruit_req.length; j++){
-			li += '<p>' + recruit_obj.recruit_req[j] + '</p>';
-		}			
-		li += '</div>'	//隐藏区域
-			+ '<a></a>'
-			+ '</li>';
-		debugger;
-		$('#recruit-list ul').append(li);
-	}
-	//var recruit_name=['MAYA动画师','MAYA渲染师','高级角色建模师','影视特效师','制片','场景建模师','绑定师',''];
+	$(function(){
+		$('.recruit-big-title-area').height($('.recruit-big-title-area').width() * 0.2640625);
+		
+		var pre_div_id = 'recruit_div_';
+		var pre_a_id = 'recruit_a_';
+		var pre_li_id = 'recruit_li_';
+		for(var i = 0; i < recruit_json.length; i++){
+			var recruit_obj = recruit_json[i];
+			var li = '<li id="' + pre_li_id + i +'">'
+				+ '<p style="font-size:16px;font-weight:bold">' + recruit_obj.recruit_name + '</p>'
+				+ '<p style="font-size:12px">' + recruit_obj.recruit_name_en + '</p>'
+				+ '<p style="font-size:10px">部门：' + recruit_obj.dept + '&nbsp;|&nbsp;' + recruit_obj.recruit_num + '人</p>'
+				+ '<div id="' + pre_div_id + i +'">';
+			for(var j = 0; j < recruit_obj.recruit_req.length; j++){
+				li += '<p>' + recruit_obj.recruit_req[j] + '</p>';
+			}			
+			li += '</div>'	//隐藏区域
+				+ '<a id="out_' + pre_a_id + i +'" class="recruit_fadeout"><img src="img/fadeout.png"/></a>'
+				+ '<a id="in_' + pre_a_id + i +'" class="recruit_fadein"><img src="img/fadein.png"/></a>'
+				+ '</li>';
+			debugger;
+			$('#recruit-list ul').append(li);
+		}
+		$("#recruit-list ul li .recruit_fadein").hide();
+		
+		//监听事件
+		$("#recruit-list ul li .recruit_fadeout").click(function(){
+			$("#recruit-list ul li div").fadeOut();
+			var i = this.id.replace("out_" + pre_a_id, '');
+			$("#recruit-list ul li #" + pre_div_id + i).fadeIn();
+			$("#recruit-list ul li #out_" + pre_a_id + i).hide();
+			$("#recruit-list ul li #in_" + pre_a_id + i).show();
+		});
+			
+		$("#recruit-list ul li .recruit_fadein").click(function(){
+			var i = this.id.replace("in_" + pre_a_id, '');
+			$("#recruit-list ul li #" + pre_div_id + i).fadeOut();
+			$("#recruit-list ul li #out_" + pre_a_id + i).show();
+			$("#recruit-list ul li #in_" + pre_a_id + i).hide();
+		});
+	});
   </script>
 
 </html>

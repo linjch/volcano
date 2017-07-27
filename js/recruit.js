@@ -3,7 +3,7 @@ var recruit_json=[
 			'recruit_name':'MAYA动画师',
 			'recruit_name_en' : 'ANIMATOR',
 			'dept' : '动画',
-			'recruit_num' : 1,
+			'recruit_num' : 10,
 			'recruit_req' : [
 				'1、3D设计相关专业大专及以上学历，具备实际3D动画制作经验2年以上；',
 				'2、精通3D Max, Maya 软件，负责角色绑定相关工作，并按公司需要完成动画制作；',
@@ -16,7 +16,7 @@ var recruit_json=[
 			'recruit_name':'MAYA渲染师',
 			'recruit_name_en' : 'LIGHTING ENGINEER',
 			'dept' : '灯光',
-			'recruit_num' : 1,
+			'recruit_num' : 10,
 			'recruit_req' : [
 				'1、熟悉CG渲染器Vray, Mental ray, arnold，renderman两种以上渲染器；',
 				'2、渲染毛发、粒子经验者，熟悉渲染农场的架构，网络渲染；',
@@ -30,7 +30,7 @@ var recruit_json=[
 			'recruit_name':'高级角色建模师',
 			'recruit_name_en' : 'ROLE MODELER',
 			'dept' : '灯光',
-			'recruit_num' : 1,
+			'recruit_num' : 10,
 			'recruit_req' : [
 				'1、专科以上学历，影视制作、动画设计或广告设计相关专业，一年以上影视包装/后期制作（AE为主）方面的工作经验，能独立完成影片剪辑、包装、后期动画、后期特效处理等高品质影视项目；',
 				'2、熟悉影片的后期制作流程及标准，熟练使用后期制作和相关软件（Maya、C4d、After Effects Photoshop 等）；',
@@ -43,7 +43,7 @@ var recruit_json=[
 			'recruit_name':'影视特效师',
 			'recruit_name_en' : 'EFFECTS ARTIST',
 			'dept' : '特效',
-			'recruit_num' : 1,
+			'recruit_num' : 5,
 			'recruit_req' : [
 				'1、一年以上三维特效制作的工作经验；',
 				'2、熟悉MAYA特效模块，能熟练制作刚体流体粒子毛发布料等三维特效；',
@@ -56,7 +56,7 @@ var recruit_json=[
 			'recruit_name':'制片',
 			'recruit_name_en' : 'FILMMAKONG',
 			'dept' : '制片',
-			'recruit_num' : 1,
+			'recruit_num' : 3,
 			'recruit_req' : [
 				'1、大专以上学历，对影视广告、游戏宣传片、CG等制作有一定认知，了解制作表现手法；',
 				'2、具有较好的视觉艺术鉴赏能力，把握制作内容的整体风格走向；',
@@ -69,7 +69,7 @@ var recruit_json=[
 			'recruit_name':'场景建模师',
 			'recruit_name_en' : 'SCENE MODELER',
 			'dept' : '设计',
-			'recruit_num' : 1,
+			'recruit_num' : 5,
 			'recruit_req' : [
 				'1、熟练使用三维软件3DMAX、MAYA、ZB等,会分UV、VRAY等渲染器；',
 				'2、根据原画或照片创建3D角色和场景的高模或低模，同时满足艺术和设计需求；',
@@ -89,6 +89,19 @@ var recruit_json=[
 				'3、具有一定的美术功底，能把握模型造型,变形效果，有个人见解并能指导模型师进行变形目标体的制作；',
 				'4、能根据客户要求使用maya完成高质量的系统绑定，高效的按时完成任务；',
 				'5、熟练绑定相关的程序编写，通晓mel、Python，并成功独立开发过插件者优先。'
+			]
+		},
+		{
+			'recruit_name':'影视后期合成制作师',
+			'recruit_name_en' : 'THE FILM AND TELEVISION POST-PRODACTION',
+			'dept' : '后期',
+			'recruit_num' : 2,
+			'recruit_req' : [
+				'1、专科以上学历，影视制作、动画设计或广告设计相关专业，一年以上影视包装/后期制作（AE为主）方面的工作经验，能独立完成影片剪辑、包装、后期动画、后期特效处理等高品质影视项目；',
+				'2、熟悉影片的后期制作流程及标准，熟练使用后期制作和相关软件（Maya、C4d、After Effects Photoshop 等）；',
+				'3、熟悉各种视频、音频文件转换，编码格式等，能够按工作标准完成各项高强度工作，能适应紧急项目加班；',
+				'4、丰富的视觉表达经验，良好的审美和创新能力，对作品的主题创意、标版设计、动画、质感、节奏、色彩、音乐等方面能较好把握；',
+				'5、注重团队合作，有责任心，真心喜欢和爱好这份职业，渴望好的机会制作出真正属于自己创意的作品。'
 			]
 		}
 	];
