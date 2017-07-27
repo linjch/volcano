@@ -118,8 +118,28 @@
 			var window_width = $(window).width();
 			//var window_height = window_width * 0.5046875;
 			
-			//轮播圆点
+			var scale;
+			getImageWidthAndHeight('img/index-1.jpg', function(w, h){
+				var width = $(".banner ul li").width();
+				scale = h / w;
+				var heigth = width * scale;
+				$(".banner ul li").height(heigth);
+				$('.banner').height(heigth);
+			});
+			
 			var num = 0;
+			$(window).resize(function(){
+				window_width = $(window).width();
+				//window_height = window_width * 0.5046875;
+				$('.banner ul li').css({width:window_width});
+				$('.banner').height(window_width * scale);
+				$('.banner ul li').css({height:window_width * scale});
+				clearInterval(timer);
+				nextPlay();
+				timer = setInterval(nextPlay,2000);
+			});
+			
+			//轮播圆点
 			$('.banner ol li').mouseover(function(){//用hover的话会有两个事件(鼠标进入和离开)
 				$(this).addClass('current').siblings().removeClass('current');
 				//第一张图： 0 * window_width
@@ -191,26 +211,6 @@
 			});
 			
 			$('.banner ul li').width(window_width);
-			
-			var scale;
-			getImageWidthAndHeight('img/index-1.jpg', function(w, h){
-				var width = $(".banner ul li").width();
-				scale = h / w;
-				var heigth = width * scale;
-				$(".banner ul li").height(heigth);
-				$('.banner').height(heigth);
-			});
-			
-			$(window).resize(function(){
-				window_width = $(window).width();
-				//window_height = window_width * 0.5046875;
-				$('.banner ul li').css({width:window_width});
-				$('.banner').height(window_width * scale);
-				$('.banner ul li').css({height:window_width * scale});
-				clearInterval(timer);
-				nextPlay();
-				timer = setInterval(nextPlay,2000);
-			});
 		});
   </script>
 </html>
