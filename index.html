@@ -108,30 +108,18 @@
 				$('.banner ul li').eq(key).css('background-image','url('+value+')');
 			});
 
-			$('.banner ul').css('width',(images_count+1)*100+'%');
+			$('.banner ul').css('width',(images_count+1)*100+'%');	//500%
 
-			$('.banner ol').css('width',(images_count+1)*20+'px');
-			$('.banner ol').css('margin-left',-images_count*20*0.5-10+'px');
+			$('.banner ol').css('width',(images_count+1)*20+'px');	//100%
+			$('.banner ol').css('margin-left',-images_count*20*0.5-10+'px');	//-40px
 
 			//=========================
-
-			var num = 0;
 			//获取窗口宽度
 			var window_width = $(window).width();
-			var window_height = window_width * 0.5046875;
-			$(window).resize(function(){
-				window_width = $(window).width();
-				$('.banner').height(window_height);
-				$('.banner ul li').css({width:window_width});
-				$('.banner ul li').css({height:window_height});
-				clearInterval(timer);
-				nextPlay();
-				timer = setInterval(nextPlay,2000);
-			});
-			$('.banner').height(window_height);
-			$('.banner ul li').height(window_height);
-			$('.banner ul li').width(window_width);
+			//var window_height = window_width * 0.5046875;
+			
 			//轮播圆点
+			var num = 0;
 			$('.banner ol li').mouseover(function(){//用hover的话会有两个事件(鼠标进入和离开)
 				$(this).addClass('current').siblings().removeClass('current');
 				//第一张图： 0 * window_width
@@ -200,6 +188,28 @@
 			//返回上一张
 			$('.banner .left').click(function(){
 				prevPlay();
+			});
+			
+			$('.banner ul li').width(window_width);
+			
+			var scale;
+			getImageWidthAndHeight('img/index-1.jpg', function(w, h){
+				var width = $(".banner ul li").width();
+				scale = h / w;
+				var heigth = width * scale;
+				$(".banner ul li").height(heigth);
+				$('.banner').height(heigth);
+			});
+			
+			$(window).resize(function(){
+				window_width = $(window).width();
+				//window_height = window_width * 0.5046875;
+				$('.banner ul li').css({width:window_width});
+				$('.banner').height(window_width * scale);
+				$('.banner ul li').css({height:window_width * scale});
+				clearInterval(timer);
+				nextPlay();
+				timer = setInterval(nextPlay,2000);
 			});
 		});
   </script>

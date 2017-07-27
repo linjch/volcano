@@ -261,27 +261,24 @@
 			$('.product-list ul li').width(images_height);
 			$('.product-list ul li').height(images_height);
 			$('.introduce ul li').height($('.introduce ul li').width()*0.618);
-			$('.product-big-title-area').height($('.product-big-title-area').width() * 0.2640625);
+			
+			var scale;
+			getImageWidthAndHeight('img/product_top.jpg', function(w, h){
+				var width = $(".product-big-title-area").width();
+				scale = h / w;
+				var heigth = width * scale;
+				$(".product-big-title-area").height(heigth);
+			});
+			//$('.product-big-title-area').height($('.product-big-title-area').width() * 0.2640625);
 			
 			$(window).resize(function(){
 				images_height = $("#product-list").width() * 0.2;
 				$('.product-list ul li').width(images_height);
 				$('.product-list ul li').height(images_height);
 				$('.introduce ul li').height($('.introduce ul li').width()*0.618);
+				$(".product-big-title-area").height($(window).width() * scale);
 			});
 		});
-			
-		function getImageWidthAndHeight(url, callback){
-			var img = new Image();
-			img.src = url;
-			if(img.complete){
-				callback(img.width, img.height);
-			}else{
-				img.onload = function(){
-					callback(img.width, img.height);
-				}
-			}
-		}
 	</script>
 	<script type="text/javascript" src="js/jquery.reveal.js"></script>
   </body>

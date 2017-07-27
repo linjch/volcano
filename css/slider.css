@@ -66,11 +66,11 @@
 		}
 		.banner .left{
 			left: 60px;
-			background: url('../img/left_right.png') no-repeat 0 0px;
+			background: url('../img/left.png') no-repeat -78px -50px;
 		}
 		.banner .right{
 			right: 60px;
-			background: url('../img/left_right.png') no-repeat 0px -120px;
+			background: url('../img/right.png') no-repeat -120px -45px;
 		}
 		.banner .left:hover , .banner .right:hover{
 			background-color: rgba(0, 0, 0, 0.31);

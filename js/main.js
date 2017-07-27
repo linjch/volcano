@@ -86,3 +86,15 @@ jQuery(document).ready(function($){
     })      
 });
 
+
+function getImageWidthAndHeight(url, callback){
+	var img = new Image();
+	img.src = url;
+	if(img.complete){
+		callback(img.width, img.height);
+	}else{
+		img.onload = function(){
+			callback(img.width, img.height);
+		}
+	}
+}

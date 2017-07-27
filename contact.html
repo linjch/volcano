@@ -131,7 +131,18 @@
   </body>
 
   <script>
-	$('.contact-big-title-area').height($('.contact-big-title-area').width() * 0.2640625);
+	var scale;
+	getImageWidthAndHeight('img/contactus.jpg', function(w, h){
+		var width = $(".contact-big-title-area").width();
+		scale = h / w;
+		var heigth = width * scale;
+		$(".contact-big-title-area").height(heigth);
+	});
+	$(window).resize(function(){
+		$(".contact-big-title-area").height($(window).width() * scale);
+	});
+	//$('.contact-big-title-area').height($('.contact-big-title-area').width() * 0.2640625);
+	
 	$("#showmap").height($("#showmap").width() * 0.618);
 	/*
 	//显示地图
