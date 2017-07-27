@@ -74,7 +74,7 @@
   </body>
   
   <script>
-  $(function(){ //页面加载完毕才执行
+	$(function(){ //页面加载完毕才执行
 			//=========设置参数==========
 			//图片统一高度：
 			//var images_height = $(".banner ul li").width() * 0.505;
@@ -122,18 +122,19 @@
 			getImageWidthAndHeight('img/index-1.jpg', function(w, h){
 				var width = $(".banner ul li").width();
 				scale = h / w;
-				var heigth = width * scale;
-				$(".banner ul li").height(heigth);
-				$('.banner').height(heigth);
+				var height = width * scale;
+				$(".banner ul li").height(height);
+				$('.banner').height(height);
 			});
 			
 			var num = 0;
 			$(window).resize(function(){
 				window_width = $(window).width();
 				//window_height = window_width * 0.5046875;
-				$('.banner ul li').css({width:window_width});
-				$('.banner').height(window_width * scale);
-				$('.banner ul li').css({height:window_width * scale});
+				$('.banner ul li').width(window_width);
+				var height = $('.banner ul li').width() * scale;
+				$('.banner').height(height);
+				$('.banner ul li').height(height);
 				clearInterval(timer);
 				nextPlay();
 				timer = setInterval(nextPlay,2000);
