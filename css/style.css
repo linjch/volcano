@@ -745,6 +745,12 @@ width: 10px;
 	margin-left:2%;
 }
 
+.single-product-area .introduce ul li span{
+	display: inline-block;
+	vertical-align:middle;
+	line-height:22px;
+}
+
 .single-product-area .introduce  ul li:hover{
 	background:#ffb900;
 	color:#000;
