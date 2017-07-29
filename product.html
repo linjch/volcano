@@ -67,10 +67,9 @@
 		</div>
     </div>
     
-    <div class="single-product-area">
-        <div class="container" style="text-align:center">
+    <div class="single-product-area source_han_sans">
 			<div class="row">
-				<h2>WORK SHOW</h2>
+				<h2 class="arial_narrow">WORK SHOW</h2>
 				<center><hr style="border:0.06em solid #ffb900;width:80px;margin-top:-10px;"/></center>
 				<h4>作品展示</h4>
 				<center><hr style="border:0.01em solid #e1e1e1;width:100px;margin-top:-10px;"/></center>
@@ -79,8 +78,9 @@
 				<ul></ul>
 			</div>
 			
+		<div class="container">	
 			<div class="row" style="margin-top:50px;">
-				<h2>SERVICE TEAM</h2>
+				<h2 class="arial_narrow">SERVICE TEAM</h2>
 				<center><hr style="border:0.06em solid #ffb900;width:80px;margin-top:-10px;"/></center>
 				<h4>服务团队</h4>
 				<center><hr style="border:0.01em solid #e1e1e1;width:100px;margin-top:-10px;"/></center>
@@ -92,9 +92,14 @@
 			
 			<div class="row introduce" style="margin-top:50px;">
 				<ul>
+					<li id="introduce_cg">CG</li>
+					<li id="introduce_series">Series</li>
+					<li id="introduce_movie">Movie</li>
+				<!--
 					<li>CG是计算机动画（Computer Animation）的缩写。通常分为二维动画和三维动画两种。CG业务几乎囊括了当今电脑时代中所有胡视觉切切艺术创作活动。目前我司CG业务水平位于国内CG行业前列水平。为游戏公司制作了多部优秀作品。</li>
 					<li>动画连续剧业务，多于各大动画电视台有网络播放。我司已与多家优秀动画公司合作，参与制作多部连接剧动画。均登陆央视少儿、金鹰卡通等收视率排名前列的电视台全国播放。所登陆网络平台均超过1亿点播量。</li>
 					<li>电影业务是指院线动画电影（包括部分真人电影中的特效制作），目前我司与业内知名动画公司达成合作协议，参与制作优质大型动画电影《大闹西游》，电影将于春节档期强势登陆各大院线。</li>
+				-->
 				</ul>
 			</div>
         </div>
@@ -176,7 +181,7 @@
 			];
 			var video_name = [
 				'龙武2','天天枪战','迷雾','思美人','天天炫斗剪辑',
-				'卢卡斯','师兄','龙族要塞1','龙族要塞2','龙族要塞3',
+				'卢卡斯','尸兄','龙族要塞1','龙族要塞2','龙族要塞3',
 				'星际传奇','微信微粒贷','佛陀传','爆爆王国','百田',
 				'阿修罗1','阿修罗2','吕布渲染图','貂蝉变身后渲染图','貂蝉变身前渲染图',
 				'貂蝉原画','貂蝉原画', '','',''
@@ -261,6 +266,7 @@
 			$('.product-list ul li').width(images_height);
 			$('.product-list ul li').height(images_height);
 			$('.introduce ul li').height($('.introduce ul li').width()*0.618);
+			$('.introduce ul li').css('line-height', $('.introduce ul li').height() + "px");
 			
 			var scale;
 			getImageWidthAndHeight('img/product_top.jpg', function(w, h){
@@ -277,6 +283,34 @@
 				$('.product-list ul li').height(images_height);
 				$('.introduce ul li').height($('.introduce ul li').width()*0.618);
 				$(".product-big-title-area").height($(window).width() * scale);
+			});
+			
+			$('.introduce ul li').hover(function(){
+				if(this.id == 'introduce_cg'){
+					$('#introduce_cg').html('CG是计算机动画（Computer Animation）的缩写。通常分为二维动画和三维动画两种。CG业务几乎囊括了当今电脑时代中所有胡视觉切切艺术创作活动。目前我司CG业务水平位于国内CG行业前列水平。为游戏公司制作了多部优秀作品。');
+				}
+				if(this.id == 'introduce_series'){
+					$('#introduce_series').html('动画连续剧业务，多于各大动画电视台有网络播放。我司已与多家优秀动画公司合作，参与制作多部连接剧动画。均登陆央视少儿、金鹰卡通等收视率排名前列的电视台全国播放。所登陆网络平台均超过1亿点播量。');
+				}
+				if(this.id == 'introduce_movie'){
+					$('#introduce_movie').html('电影业务是指院线动画电影（包括部分真人电影中的特效制作），目前我司与业内知名动画公司达成合作协议，参与制作优质大型动画电影《大闹西游》，电影将于春节档期强势登陆各大院线。');
+				}
+				$('#' + this.id).css('font-size', '12px');
+				$('#' + this.id).css('line-height', '1.8em');
+			});
+			
+			$('.introduce ul li').mouseleave(function(){
+				if(this.id == 'introduce_cg'){
+					$('#introduce_cg').html('CG');
+				}
+				if(this.id == 'introduce_series'){
+					$('#introduce_series').html('Series');
+				}
+				if(this.id == 'introduce_movie'){
+					$('#introduce_movie').html('Movie');
+				}
+				$('#' + this.id).css('font-size', '16px');
+				$('#' + this.id).css('line-height', $('.introduce ul li').height() + 'px');
 			});
 		});
 	</script>

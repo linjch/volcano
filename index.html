@@ -116,8 +116,13 @@
 			//=========================
 			//获取窗口宽度
 			var window_width = $(window).width();
+			var window_height = $(window).height() - 64;
+			
+			$(".banner ul li").height(window_height);
+			$('.banner').height(window_height);
 			//var window_height = window_width * 0.5046875;
 			
+			/*
 			var scale;
 			getImageWidthAndHeight('img/index-1.jpg', function(w, h){
 				var width = $(".banner ul li").width();
@@ -126,15 +131,16 @@
 				$(".banner ul li").height(height);
 				$('.banner').height(height);
 			});
-			
+			*/
 			var num = 0;
 			$(window).resize(function(){
 				window_width = $(window).width();
+				window_height = $(window).height() - 64;
 				//window_height = window_width * 0.5046875;
 				$('.banner ul li').width(window_width);
-				var height = $('.banner ul li').width() * scale;
-				$('.banner').height(height);
-				$('.banner ul li').height(height);
+				//var height = $('.banner ul li').width() * scale;
+				$('.banner').height(window_height);
+				$('.banner ul li').height(window_height);
 				clearInterval(timer);
 				nextPlay();
 				timer = setInterval(nextPlay,2000);
@@ -212,6 +218,12 @@
 			});
 			
 			$('.banner ul li').width(window_width);
+			
+			$('.banner ul li').click(function(){
+				if($(this).css('background-image').indexOf(images_url[0]) < 0){
+					self.location.href = 'product.html';
+				}
+			});
 		});
   </script>
 </html>

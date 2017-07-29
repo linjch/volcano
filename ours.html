@@ -75,10 +75,10 @@
 		</div>
 	</div>  
 	
-	<div class="single-logo-area">
+	<div class="single-logo-area source_han_sans">
         <div class="container">
 			<div class="row">
-				<h2>ABOUT VOLCANO</h2>
+				<h2 class="arial_narrow">ABOUT VOLCANO</h2>
 				<center><hr style="border:0.06em solid #ffb900;width:80px;margin-top:-10px;"/></center>
 				<h4>关于火山</h4>
 				<center><hr style="border:0.01em solid #e1e1e1;width:100px;margin-top:-10px;"/></center>
@@ -97,7 +97,7 @@
 		</div>
 	</div>
 	
-	<div style="padding:50px;height:200px;">
+	<div id="hole" style="padding:50px;">
         <div class="container">
 			<div class="row">
 			</div>
@@ -105,11 +105,11 @@
 	</div>
 	
 	<div class="single-logo-area">
-        <div class="container">
+        <div class="container" style="min-width:100%">
 			<div class="row">
-				<h2>COOPERATIVE PARTNER</h2>
+				<h2 class="arial_narrow">COOPERATIVE PARTNER</h2>
 				<center><hr style="border:0.06em solid #ffb900;width:80px;margin-top:-10px;"/></center>
-				<h4>合作伙伴</h4>
+				<h4 class="source_han_sans">合作伙伴</h4>
 				<center><hr style="border:0.01em solid #e1e1e1;width:100px;margin-top:-10px;"/></center>
 			</div>
 			<div class="row logo-list" id="logo-list">
@@ -294,9 +294,13 @@
 
 			var images_height = $("#logo-list ul li").width();
 			$('.logo-list ul li').height(images_height * 0.55625);
+			
+			$('#hole').height($(window).width() * 0.25);
+			
 			$(window).resize(function(){
 				images_height = $("#logo-list ul li").width();
 				$('.logo-list ul li').height(images_height * 0.55625);
+				$('#hole').height($(window).width() * 0.25);
 			});
 		});
 			
