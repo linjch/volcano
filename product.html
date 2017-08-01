@@ -68,6 +68,7 @@
     </div>
     
     <div class="single-product-area source_han_sans">
+		<div class="container" style="width:100%;margin-left:0px;margint-right:0px;">
 			<div class="row">
 				<h2 class="arial_narrow">WORK SHOW</h2>
 				<center><hr style="border:0.06em solid #ffb900;width:80px;margin-top:-10px;"/></center>
@@ -77,7 +78,8 @@
 			<div class="row product-list" id="product-list">
 				<ul></ul>
 			</div>
-			
+		</div>
+		
 		<div class="container">	
 			<div class="row" style="margin-top:50px;">
 				<h2 class="arial_narrow">SERVICE TEAM</h2>
@@ -262,8 +264,8 @@
 				}
 			});
 			
-			var images_height = $("#product-list").width() * 0.2;
-			$('.product-list ul li').width(images_height);
+			var images_height = $("#product-list ul li").width();
+			//$('.product-list ul li').width(images_height);
 			$('.product-list ul li').height(images_height);
 			$('.introduce ul li').height($('.introduce ul li').width()*0.618);
 			$('.introduce ul li').css('line-height', $('.introduce ul li').height() + "px");
@@ -278,8 +280,9 @@
 			//$('.product-big-title-area').height($('.product-big-title-area').width() * 0.2640625);
 			
 			$(window).resize(function(){
-				images_height = $("#product-list").width() * 0.2;
-				$('.product-list ul li').width(images_height);
+				$("#product-list ul li").width($(window).width() * 0.1999);
+				images_height = $("#product-list ul li").width();
+				//$('.product-list ul li').width(images_height);
 				$('.product-list ul li').height(images_height);
 				$('.introduce ul li').height($('.introduce ul li').width()*0.618);
 				$(".product-big-title-area").height($(window).width() * scale);

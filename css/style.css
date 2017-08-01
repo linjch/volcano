@@ -718,16 +718,23 @@ width: 10px;
 	position:relative;
 }
 
+.product-list ul{
+	margin:auto;
+    list-style-type: none;
+}
+
 .product-list ul li {
-	width:20%;
+	width:19.99%;
 	float:left;
 	background:#ffb900;
 	background-size: cover;
 	position: relative;
+	margin:0px;
+	padding:0px;
 }
 
 .logo-list ul li {
-	width:15.6667%;
+	width:15.6666%;
 	float:left;
 	margin-left: 1%;
 	background:center center no-repeat;
