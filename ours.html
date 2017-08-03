@@ -175,9 +175,10 @@
 			var num = 0;
 			//获取窗口宽度
 			var window_width = $(window).width();
-			var window_height = window_width * 0.501;
+			var window_height = $(window).height() - 64;
 			$(window).resize(function(){
 				window_width = $(window).width();
+				window_height = $(window).height() - 64;
 				$('.banner').height(window_height);
 				$('.banner ul li').css({width:window_width});
 				$('.banner ul li').css({height:window_height});
