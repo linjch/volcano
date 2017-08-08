@@ -245,13 +245,13 @@
 			
 			$('.introduce ul li').hover(function(){
 				if(this.id == 'introduce_cg'){
-					$('#introduce_cg span').html('CG是计算机动画（Computer Animation）的缩写。通常分为二维动画和三维动画两种。CG业务几乎囊括了当今电脑时代中所有胡视觉切切艺术创作活动。目前我司CG业务水平位于国内CG行业前列水平。为游戏公司制作了多部优秀作品。');
+					$('#introduce_cg span').html(introduce_cg);
 				}
 				if(this.id == 'introduce_series'){
-					$('#introduce_series span').html('动画连续剧业务，多于各大动画电视台有网络播放。我司已与多家优秀动画公司合作，参与制作多部连接剧动画。均登陆央视少儿、金鹰卡通等收视率排名前列的电视台全国播放。所登陆网络平台均超过1亿点播量。');
+					$('#introduce_series span').html(introduce_series);
 				}
 				if(this.id == 'introduce_movie'){
-					$('#introduce_movie span').html('电影业务是指院线动画电影（包括部分真人电影中的特效制作），目前我司与业内知名动画公司达成合作协议，参与制作优质大型动画电影《大闹西游》，电影将于春节档期强势登陆各大院线。');
+					$('#introduce_movie span').html(introduce_movie);
 				}
 				$('#' + this.id).css('font-size', '12px');
 			});
