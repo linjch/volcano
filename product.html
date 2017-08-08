@@ -51,7 +51,13 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">首页</a></li>
                         <li><a href="ours.html">我们</a></li>
-                        <li class="active"><a href="single-product.html">作品</a></li>
+                        <li class="active">
+							<a href="product.html">作品</a>
+							<ul>
+								<li><a href="product.html#video_start">视频</a></li>
+								<li><a href="product.html#img_start">静帧</a></li>
+							</ul>
+						</li>
                         <li><a href="joinus.html">招聘</a></li>
                         <li><a href="contact.html">联系</a></li>
                     </ul>
@@ -128,92 +134,40 @@
         </div>
     </div>
 
+	<script src="js/products.js" charset="gbk" type="text/javascript"></script>
 	<script>
 		$(function(){
-			var images_url = [
-				'img/product_06.jpg',
-				'img/product_07.jpg',
-				'img/product_08.jpg',
-				'img/product_09.jpg',
-				'img/product_10.jpg',
-				'img/product_11.jpg',
-				'img/product_12.jpg',
-				'img/product_13.jpg',
-				'img/product_14.jpg',
-				'img/product_15.jpg',
-				'img/product_16.jpg',
-				'img/product_17.jpg',
-				'img/product_18.jpg',
-				'img/product_19.jpg',
-				'img/product_20.jpg',
-				'img/product_21.jpg',
-				'img/product_22.jpg',
-				'img/product_23.jpg',
-				'img/product_24.jpg',
-				'img/product_25.jpg',
-				'img/product_26.jpg',
-				'img/product_27.jpg',
-				'img/product_28.jpg',
-				'img/product_29.jpg',
-				'img/product_30.jpg'
-			];
-			var video_url = [
-				'video/龙武2刀妹.mov',
-				'video/天天枪战2.mp4',
-				'video/迷雾.mov',
-				'video/思美人.mov',
-				'video/天天炫斗剪辑.mp4',
-				'video/卢卡斯.mov',
-				'video/尸兄.mp4',
-				'video/龙族要塞1.mov',
-				'video/龙族要塞2.mov',
-				'video/龙族要塞3.mov',
-				'video/星际传奇.mov',
-				'video/微粒贷15秒.mp4',
-				'video/佛陀传_Final.mov',
-				'video/爆爆王国.mp4',
-				'video/百田奥义联盟.mov',
-				'video/阿修罗_1.mp4',
-				'video/阿修罗2.mov',
-				'video/吕布.jpg',
-				'video/貂蝉 变身后.jpg',
-				'video/貂蝉 变身前.jpg',
-				'video/貂蝉变身前3-细化22.jpg',
-				'video/貂蝉变身后后后1117-恢复的.jpg'
-			];
-			var video_name = [
-				'龙武2','天天枪战','迷雾','思美人','天天炫斗剪辑',
-				'卢卡斯','尸兄','龙族要塞1','龙族要塞2','龙族要塞3',
-				'星际传奇','微信微粒贷','佛陀传','爆爆王国','百田',
-				'阿修罗1','阿修罗2','吕布渲染图','貂蝉变身后渲染图','貂蝉变身前渲染图',
-				'貂蝉原画','貂蝉原画', '','',''
-			];
-			var images_count = images_url.length;
-			
+			var images_count = video_jason.length;
 			//创建节点
 			//图片列表节点
 			var total_count = Number(images_count) - Number(images_count) % 5 + 5;
 			for(var j=0;j<images_count;j++){
+				var video_cover = video_jason[j].video_cover;
+				var video_url = video_jason[j].video_url;
+				var video_name = video_jason[j].video_name;
 				if(j >= images_count){
 					$('.product-list ul').append('<li></li>');
 				}else{
-					if('' != video_url[j] && undefined != video_url[j]){
+					if('' != video_url && undefined != video_url){
 						var ul_append = '';
-						ul_append += '<li class="single-product"><img src="'+images_url[j]+'"/>'
+						if(video_url.toLowerCase().lastIndexOf(".jpg") > -1
+							|| video_url.toLowerCase().lastIndexOf(".jpeg") > -1
+							|| video_url.toLowerCase().lastIndexOf(".png") > -1
+							|| video_url.toLowerCase().lastIndexOf(".gif") > -1){
+							ul_append += '<li id="img_start" class="single-product"><img src="' + video_cover + '"/>'
 								+'<div class="product-hover" id="product-hover'+j+'">'
-								+'<span>'+video_name[j]+'</span>';
-						if(video_url[j].toLowerCase().lastIndexOf(".jpg") > -1
-							|| video_url[j].toLowerCase().lastIndexOf(".jpeg") > -1
-							|| video_url[j].toLowerCase().lastIndexOf(".png") > -1
-							|| video_url[j].toLowerCase().lastIndexOf(".gif") > -1){
-							ul_append += '<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playimage"/>';
+								+'<span>'+video_name+'</span>';
+								+'<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playimage"/>';
 						}else{
-							ul_append += '<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvideo"/>';
+							ul_append += '<li id="video_start" class="single-product"><img src="' + video_cover + '"/>'
+								+'<div class="product-hover" id="product-hover'+j+'">'
+								+'<span>'+video_name+'</span>';
+								+'<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvideo"/>';
 						}
 						ul_append += '</div></li>';
 						$('.product-list ul').append(ul_append);
 					}else{
-						$('.product-list ul').append('<li><img src="'+images_url[j]+'"/></li>');
+						$('.product-list ul').append('<li><img src="' + video_cover + '"/></li>');
 					}
 				}
 			}
@@ -222,20 +176,20 @@
 								
 			$('.product-hover').hover(function(){
 				var index = this.id.replace('product-hover','');
-				if('' != video_name[index]){
+				if('' != video_jason[index].video_name){
 					$('#' + this.id + ' input[type="image"]').show();
 					$('#' + this.id + ' span').show();
 				}
 			});
 			$('.product-hover input[type="image"]').hover(function(){
 				var index = this.id.replace('imgbutton','');
-				if('' != video_name[index]){
+				if('' != video_jason[index].video_name){
 					$('#' + this.id).show();
 				}
 			});
 			$('.product-hover').mouseleave(function(){
 				var index = this.id.replace('product-hover','');
-				if('' != video_name[index]){
+				if('' != video_jason[index].video_name){
 					$('#' + this.id + ' input[type="image"]').hide();
 					$('#' + this.id + ' span').hide();
 				}
@@ -243,19 +197,20 @@
 			
 			$('.product-hover input[type="image"]').click(function(e){
 				var index = this.id.replace('imgbutton','');
-				if('' != video_name[index]){
-					if(video_url[index].toLowerCase().lastIndexOf(".jpg") > -1
-						|| video_url[index].toLowerCase().lastIndexOf(".jpeg") > -1
-						|| video_url[index].toLowerCase().lastIndexOf(".png") > -1
-						|| video_url[index].toLowerCase().lastIndexOf(".gif") > -1){
-						$("#playimage img").attr("src", video_url[index]);
-						getImageWidthAndHeight(video_url[index], function(w, h){
+				if('' != video_jason[index].video_name){
+					var video_url_index = video_jason[index].video_url;
+					if(video_url_index.toLowerCase().lastIndexOf(".jpg") > -1
+						|| video_url_index.toLowerCase().lastIndexOf(".jpeg") > -1
+						|| video_url_index.toLowerCase().lastIndexOf(".png") > -1
+						|| video_url_index.toLowerCase().lastIndexOf(".gif") > -1){
+						$("#playimage img").attr("src", video_url_index);
+						getImageWidthAndHeight(video_url_index, function(w, h){
 							var width = $("#playimage").width();
 							var heigth = h * (width / w);
 							$("#playimage").height(heigth + "px");
 						});
 					}else{
-						$("#playvideo video").attr("src", video_url[index]);
+						$("#playvideo video").attr("src", video_url_index);
 						$("#playvideo video").attr("autoplay","true");
 					}
 					e.preventDefault();
