@@ -1,6 +1,10 @@
 @font-face {  
   font-family: "思源黑体";  
-  src: url('SourceHanSans_regular.ttf') format("truetype");  
+  src: url('SourceHanSans_regular.ttf');  
+} 
+@font-face {  
+  font-family: "Arial Narrow";  
+  src: url('Arial Narrow.TTF');  
 } 
 
 .source_han_sans{
