@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/reveal.css">
 	
 	<!-- Latest jQuery form server -->
     <script src="js/jquery.min.js"></script>
@@ -76,7 +77,15 @@
 			<ol></ol>
 			<i class="left"></i><i class="right"></i>
 		</div>
-	</div>  
+	</div>
+
+	<div id="playvideo" class="reveal-modal">
+		<video src="" controls="controls">
+			您的浏览器不支持Video标签
+		</video>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>	
+	
   </body>
   
   <script>
@@ -89,7 +98,9 @@
 				'img/index-1.gif',
 				'img/index-2.jpg',
 				'img/index-3.jpg',
-				'img/index-4.jpg'
+				'img/index-4.jpg',
+				'video/火山动漫DEMOREEL.mp4'
+				//'video/阿修罗_1.mp4'
 			];
 			var images_count = images_url.length;
 			//console.log(images_count);
@@ -110,13 +121,19 @@
 
 			//载入图片
 			$('.banner ul li').css('background-image','url('+images_url[0]+')');
-			$.each(images_url,function(key,value){
-				$('.banner ul li').eq(key).css('background-image','url('+value+')');
-				/*if(0 == key){
-					$('.banner ul li').eq(key).css('display', 'none');
-					$('.banner ul li').eq(key).fadeIn(5000);
-					//$('.banner ul li').eq(key).css('transition','0.5s ease-in-out'); 
-				}*/
+			$.each(images_url,function(key,value){;
+				if(value.toLowerCase().lastIndexOf(".jpg") > -1
+							|| value.toLowerCase().lastIndexOf(".jpeg") > -1
+							|| value.toLowerCase().lastIndexOf(".png") > -1
+							|| value.toLowerCase().lastIndexOf(".gif") > -1){
+					$('.banner ul li').eq(key).attr("data-reveal-id","playvideo");
+					$('.banner ul li').eq(key).css('background-image','url('+value+')');
+				}else{
+					$('.banner ul li').eq(key).append(
+						//'<input type="image" src="img/bofang.png"/>' +
+						'<video src="' + value + '" controls="controls" style="width:100%;height:100%">您的浏览器不支持Video标签</video>'
+						);
+				}
 			});
 
 			$('.banner ul').css('width',(images_count+1)*100+'%');	//500%
@@ -143,7 +160,7 @@
 				$('.banner').height(height);
 			});
 			*/
-			var interval = 3000;
+			//var interval = 3000;
 			var num = 0;
 			$(window).resize(function(){
 				window_width = $(window).width();
@@ -153,9 +170,9 @@
 				//var height = $('.banner ul li').width() * scale;
 				$('.banner').height(window_height);
 				$('.banner ul li').height(window_height);
-				clearInterval(timer);
-				nextPlay();
-				timer = setInterval(nextPlay,interval);
+				//clearInterval(timer);
+				//nextPlay();
+				//timer = setInterval(nextPlay,interval);
 			});
 			
 			//轮播圆点
@@ -169,9 +186,15 @@
 				//console.log(i);
 				$('.banner ul').stop().animate({left:-i*window_width},500);
 				num = i;
+				
+				if(num == images_count - 1){
+					$('.banner ul li video')[0].play();
+				}else{
+					$('.banner ul li video')[0].pause();
+				}
 			});
 			//自动播放
-			var timer = null;
+			//var timer = null;
 			function prevPlay(){
 				num--;
 				if(num<0){
@@ -187,6 +210,12 @@
 				}else{
 					$('.banner ol li').eq(num).addClass('current').siblings().removeClass('current');
 
+				}
+				
+				if(num == images_count - 1){
+					$('.banner ul li video')[0].play();
+				}else{
+					$('.banner ul li video')[0].pause();
 				}
 			}
 			function nextPlay(){
@@ -208,15 +237,22 @@
 					$('.banner ol li').eq(num).addClass('current').siblings().removeClass('current');
 
 				}
+				
+				if(num == images_count - 1){
+					$('.banner ul li video')[0].play();
+				}else{
+					$('.banner ul li video')[0].pause();
+				}
 			}
-			timer = setInterval(nextPlay,interval);
+			
+			//timer = setInterval(nextPlay,interval);
 			//鼠标经过banner，停止定时器,离开则继续播放
 			$('.banner').mouseenter(function(){
-				clearInterval(timer);
+				//clearInterval(timer);
 				//左右箭头显示(淡入)
 				$('.banner i').fadeIn();
 			}).mouseleave(function(){
-				timer = setInterval(nextPlay,interval);
+				//timer = setInterval(nextPlay,interval);
 				//左右箭头隐藏(淡出)
 				$('.banner i').fadeOut();
 			});
@@ -231,11 +267,32 @@
 			
 			$('.banner ul li').width(window_width);
 			
-			$('.banner ul li').click(function(){
+			$('.banner ul li').click(function(e){
 				if($(this).css('background-image').indexOf(images_url[0]) < 0){
-					self.location.href = 'product.html';
+					debugger;
+					var video_url_index = '';
+					var i = $(this).index();
+					if(i==1){
+						video_url_index = video_jason[0].video_url;
+					}
+					if(i==2){
+						video_url_index = video_jason[3].video_url;
+					}
+					if(i==3){
+						video_url_index = video_jason[1].video_url;
+					}
+					if(''!=video_url_index){
+						$('#playvideo video').attr("src", video_url_index);
+						$('#playvideo video').attr("autoplay","true");
+						e.preventDefault();
+						var modalLocation = $(this).attr('data-reveal-id');
+						$('#'+modalLocation).reveal($(this).data());
+					}
+					//self.location.href = 'product.html';
 				}
 			});
 		});
   </script>
+  <script src="js/products.js" charset="gbk" type="text/javascript"></script>
+  <script type="text/javascript" src="js/jquery.reveal.js"></script>
 </html>
