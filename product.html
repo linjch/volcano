@@ -200,9 +200,10 @@
 						|| video_url_index.toLowerCase().lastIndexOf(".gif") > -1){
 						$("#playimage img").attr("src", video_url_index);
 						getImageWidthAndHeight(video_url_index, function(w, h){
-							var width = $("#playimage").width();
+							var width = $(window).width();
 							if(width < w){
 								var heigth = h * (width / w);
+								$("#playimage").height(width + "px");
 								$("#playimage").height(heigth + "px");
 							}else{
 								$("#playimage").width(w + "px");
