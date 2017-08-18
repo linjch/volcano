@@ -6,7 +6,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_07.jpg",
-		video_url:'video/天天枪战2.mp4',
+		video_url:'video/天天枪战2.mov',
 		video_name:'天天枪战'
 	},
 	{
@@ -21,7 +21,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_10.jpg",
-		video_url:'video/天天炫斗剪辑.mp4',
+		video_url:'video/天天炫斗剪辑.mov',
 		video_name:'天天炫斗剪辑'
 	},
 	{
@@ -31,7 +31,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_12.jpg",
-		video_url:'video/尸兄.mp4',
+		video_url:'video/尸兄.mov',
 		video_name:'尸兄'
 	},
 	{
@@ -56,7 +56,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_17.jpg",
-		video_url:'video/微粒贷15秒.mp4',
+		video_url:'video/微粒贷15秒.mov',
 		video_name:'微信微粒贷'
 	},
 	{
@@ -66,7 +66,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_19.jpg",
-		video_url:'video/爆爆王国.mp4',
+		video_url:'video/爆爆王国.mov',
 		video_name:'爆爆王国'
 	},
 	{
@@ -76,7 +76,7 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_21.jpg",
-		video_url:'video/阿修罗_1.mp4',
+		video_url:'video/阿修罗_1.mov',
 		video_name:'阿修罗1'
 	},
 	{
@@ -86,28 +86,28 @@ var video_jason=[
 	},
 	{
 		video_cover:"img/product_23.jpg",
-		video_url:'video/吕布.jpg',
-		video_name:'吕布渲染图'
+		video_url:'video/思美人Tpose.jpg',
+		video_name:'思美人Tpose'
 	},
 	{
 		video_cover:"img/product_24.jpg",
-		video_url:'video/貂蝉 变身后.jpg',
-		video_name:'貂蝉变身后渲染图'
+		video_url:'video/龙武刀妹Tpose.png',
+		video_name:'龙武刀妹Tpose'
 	},
 	{
 		video_cover:"img/product_25.jpg",
-		video_url:'video/貂蝉 变身前.jpg',
-		video_name:'貂蝉变身前渲染图'
+		video_url:'video/天天枪战Tpose1.png',
+		video_name:'天天枪战Tpose1'
 	},
 	{
 		video_cover:"img/product_26.jpg",
-		video_url:'video/貂蝉变身前3-细化22.jpg',
-		video_name:'貂蝉原画'
+		video_url:'video/天天枪战Tpose2.png',
+		video_name:'天天枪战Tpose2'
 	},
 	{
 		video_cover:"img/product_27.jpg",
-		video_url:'video/貂蝉变身后后后1117-恢复的.jpg',
-		video_name:'貂蝉原画'
+		video_url:'video/天天枪战Tpose3.png',
+		video_name:'天天枪战Tpose3'
 	},
 	{
 		video_cover:"img/product_28.jpg",
@@ -126,6 +126,6 @@ var video_jason=[
 	}
 ];
 
-var introduce_cg='CG是计算机动画（Computer Animation）的缩写。通常分为二维动画和三维动画两种。CG业务几乎囊括了当今电脑时代中所有胡视觉切切艺术创作活动。目前我司CG业务水平位于国内CG行业前列水平。为游戏公司制作了多部优秀作品。';
+var introduce_cg='CG是计算机动画（Computer Animation）的缩写。通常分为二维动画和三维动画两种。CG业务几乎囊括了当今电脑时代中所有的视觉艺术创作活动。目前我司CG业务水平位于国内CG行业前列水平。为游戏公司制作了多部优秀作品。';
 var introduce_series='动画连续剧业务，多于各大动画电视台有网络播放。我司已与多家优秀动画公司合作，参与制作多部连接剧动画。均登陆央视少儿、金鹰卡通等收视率排名前列的电视台全国播放。所登陆网络平台均超过1亿点播量。';
 var introduce_movie='电影业务是指院线动画电影（包括部分真人电影中的特效制作），目前我司与业内知名动画公司达成合作协议，参与制作优质大型动画电影《大闹西游》，电影将于春节档期强势登陆各大院线。';
