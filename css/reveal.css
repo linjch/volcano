@@ -17,9 +17,6 @@
 	.reveal-modal {
 		visibility: hidden;
 		top: 15%; 
-		left: 25%;
-		width: 50%;
-		height:70%;
 		background:#000;
 		/*background: #eee url(../img/modal-gloss.png) no-repeat -200px -80px;*/
 		position: absolute;
@@ -31,6 +28,12 @@
 		-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
 		-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	}
+	
+	#playvideo {
+		left: 25%;
+		width: 50%;
+		height:70%;
 	}
 	
 	.reveal-modal video{
