@@ -96,7 +96,7 @@
 			//图片路径/链接(数组形式):
 			var images_url = [
 				'img/index-1.gif',
-				'video/火山动漫DEMOREEL.mp4',
+				'video/阿修罗_1.mp4',
 				'img/index-2.jpg',
 				'img/index-3.jpg',
 				'img/index-4.jpg'
@@ -104,6 +104,7 @@
 			];
 			var images_count = images_url.length;
 			//console.log(images_count);
+			var video_index = 1;
 
 			//创建节点
 			//图片列表节点
@@ -187,7 +188,7 @@
 				$('.banner ul').stop().animate({left:-i*window_width},500);
 				num = i;
 				
-				if(num == images_count - 1){
+				if(num == video_index){
 					$('.banner ul li video')[0].play();
 				}else{
 					$('.banner ul li video')[0].pause();
@@ -205,14 +206,14 @@
 					//console.log(num);
 					$('.banner ul').stop().animate({left:-num*window_width},500);
 				}
-				if(num==images_count-1){
+				if(num==1){
 					$('.banner ol li').eq(images_count-1).addClass('current').siblings().removeClass('current');
 				}else{
 					$('.banner ol li').eq(num).addClass('current').siblings().removeClass('current');
 
 				}
 				
-				if(num == images_count - 1){
+				if(num == video_index){
 					$('.banner ul li video')[0].play();
 				}else{
 					$('.banner ul li video')[0].pause();
@@ -238,7 +239,7 @@
 
 				}
 				
-				if(num == images_count - 1){
+				if(num == video_index){
 					$('.banner ul li video')[0].play();
 				}else{
 					$('.banner ul li video')[0].pause();
