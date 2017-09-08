@@ -1,28 +1,28 @@
 var video_jason=[
 	{
 		video_cover:"img/product_06.jpg",	//封面图片
-		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193479',	//视频/图片连接
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14193479',	//视频/图片连接
 		//video_url : '<embed height="640" width="911.5" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=14193479&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>',
 		video_name:'龙武2'	//视频/图片名称
 	},
 	{
 		video_cover:"img/product_07.jpg",
-		video_url:'http://static.hdslb.com/miniloader.swf?aid=14218898',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14218898',
 		video_name:'天天枪战'
 	},
 	{
 		video_cover:"img/product_08.jpg",
-		video_url:'http://static.hdslb.com/miniloader.swf?aid=14194864',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14194864',
 		video_name:'迷雾'
 	},
 	{
 		video_cover:"img/product_09.jpg",
-		video_url:'http://static.hdslb.com/miniloader.swf?aid=14195620',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14195620',
 		video_name:'思美人'
 	},
 	{
 		video_cover:"img/product_10.jpg",
-		video_url:'http://static.hdslb.com/miniloader.swf?aid=14218759',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14218759',
 		video_name:'天天炫斗剪辑'
 	},
 	{
