@@ -113,7 +113,9 @@
 					}		
 				}
 				modal.unbind('reveal:close');
-				$("#playvideo video")[0].pause();	//暂停视屏播放
+				$("#playvideo .video").html("");
+				//$("#playvideo video")[0].pause();	//暂停视屏播放
+				//$("#playvideo embed")[0].pause();	//暂停视屏播放
 			});     
    	
 /*---------------------------

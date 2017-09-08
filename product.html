@@ -109,9 +109,12 @@
     </div>
 
 	<div id="playvideo" class="reveal-modal">
+		<!--
 		<video src="" controls="controls">
 			您的浏览器不支持Video标签
 		</video>
+		-->
+		<div class="video"></div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 	<div id="playimage" class="reveal-modal">
@@ -217,8 +220,10 @@
 							}
 						});
 					}else{
-						$("#playvideo video").attr("src", video_url_index);
-						$("#playvideo video").attr("autoplay","true");
+						//$("#playvideo .video").html(video_url_index)
+						$("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
+						//$("#playvideo video").attr("src", video_url_index);
+						//$("#playvideo video").attr("autoplay","true");
 					}
 					e.preventDefault();
 					var modalLocation = $(this).attr('data-reveal-id');

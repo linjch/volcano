@@ -1,87 +1,88 @@
 var video_jason=[
 	{
 		video_cover:"img/product_06.jpg",	//封面图片
-		video_url:'video/龙武2刀妹.mov',	//视频/图片连接
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193479',	//视频/图片连接
+		//video_url : '<embed height="640" width="911.5" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=14193479&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>',
 		video_name:'龙武2'	//视频/图片名称
 	},
 	{
 		video_cover:"img/product_07.jpg",
-		video_url:'video/天天枪战2.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14218898',
 		video_name:'天天枪战'
 	},
 	{
 		video_cover:"img/product_08.jpg",
-		video_url:'video/迷雾.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14194864',
 		video_name:'迷雾'
 	},
 	{
 		video_cover:"img/product_09.jpg",
-		video_url:'video/思美人.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14195620',
 		video_name:'思美人'
 	},
 	{
 		video_cover:"img/product_10.jpg",
-		video_url:'video/天天炫斗剪辑.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14218759',
 		video_name:'天天炫斗剪辑'
 	},
 	{
 		video_cover:"img/product_11.jpg",
-		video_url:'video/卢卡斯.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14194091',
 		video_name:'卢卡斯'
 	},
 	{
 		video_cover:"img/product_12.jpg",
-		video_url:'video/尸兄.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14195132',
 		video_name:'尸兄'
 	},
 	{
 		video_cover:"img/product_13.jpg",
-		video_url:'video/龙族要塞1.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193979',
 		video_name:'龙族要塞1'
 	},
 	{
 		video_cover:"img/product_14.jpg",
-		video_url:'video/龙族要塞2.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193979',
 		video_name:'龙族要塞2'
 	},
 	{
 		video_cover:"img/product_15.jpg",
-		video_url:'video/龙族要塞3.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193979',
 		video_name:'龙族要塞3'
 	},
 	{
 		video_cover:"img/product_16.jpg",
-		video_url:'video/星际传奇.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14217316',
 		video_name:'星际传奇'
 	},
 	{
 		video_cover:"img/product_17.jpg",
-		video_url:'video/微粒贷15秒.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14217158',
 		video_name:'微信微粒贷'
 	},
 	{
 		video_cover:"img/product_18.jpg",
-		video_url:'video/佛陀传_Final.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14245279',
 		video_name:'佛陀传'
 	},
 	{
 		video_cover:"img/product_19.jpg",
-		video_url:'video/爆爆王国.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193289',
 		video_name:'爆爆王国'
 	},
 	{
 		video_cover:"img/product_20.jpg",
-		video_url:'video/百田奥义联盟.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14192850',
 		video_name:'百田'
 	},
 	{
 		video_cover:"img/product_21.jpg",
-		video_url:'video/阿修罗_1.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193090',
 		video_name:'阿修罗1'
 	},
 	{
 		video_cover:"img/product_22.jpg",
-		video_url:'video/阿修罗2.mov',
+		video_url:'http://static.hdslb.com/miniloader.swf?aid=14193090',
 		video_name:'阿修罗2'
 	},
 	{
