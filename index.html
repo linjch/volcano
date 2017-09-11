@@ -100,7 +100,7 @@
 			var images_url = [
 				'img/index-1.gif',
 				//'video/火山动漫DEMOREEL.mp4',
-				'http://static.hdslb.com/miniloader.swf?aid=14217629',
+				'//static.hdslb.com/miniloader.swf?aid=14217629&page=1',
 				'img/index-2.jpg',
 				'img/index-3.jpg',
 				'img/index-4.jpg'
@@ -280,7 +280,7 @@
 					if(''!=video_url_index){
 						//$('#playvideo video').attr("src", video_url_index);
 						//$('#playvideo video').attr("autoplay","true");
-						$("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
+						$("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
 						e.preventDefault();
 						var modalLocation = $(this).attr('data-reveal-id');
 						$('#'+modalLocation).reveal($(this).data());
@@ -292,7 +292,7 @@
 			function controlVideo(){
 				if(num == video_index){
 					//$('.banner ul li video')[0].play();
-					$('.banner ul li .video').html('<embed width="100%" height="100%" type="application/x-shockwave-flash" quality="high" src="' + images_url[1] + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
+					$('.banner ul li .video').html('<embed width="100%" height="100%" type="application/x-shockwave-flash" quality="high" src="' + images_url[1] + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
 				}else{
 					//$('.banner ul li video')[0].pause();
 					$('.banner ul li .video').html("");
