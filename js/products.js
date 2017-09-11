@@ -1,22 +1,22 @@
 var video_jason=[
 	{
 		video_cover:"img/product_06.jpg",	//封面图片
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14193479',	//视频/图片连接
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14193479&page=1',	//视频/图片连接
 		video_name:'龙武2'	//视频/图片名称
 	},
 	{
 		video_cover:"img/product_07.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14218898',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14218898&page=1',
 		video_name:'超能战线'
 	},
 	{
 		video_cover:"img/product_08.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14194864',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14194864&page=1',
 		video_name:'迷雾'
 	},
 	{
 		video_cover:"img/product_09.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14195620',
+		video_url:'//static.hdslb.com/miniloader.swf?aid=14195620&page=1',
 		video_name:'思美人'
 	},
 	{
