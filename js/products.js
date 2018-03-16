@@ -71,21 +71,6 @@ var video_3d=[
 		video_cover:"img/product_19.jpg",
 		video_url:'//static.hdslb.com/miniloader.swf?aid=14193289&page=1',
 		video_name:'±¬±¬Íõ¹ú'
-	},
-	{
-		video_cover:"img/product_20.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14192850&page=1',
-		video_name:'°ÙÌï'
-	},
-	{
-		video_cover:"img/product_21.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14193090&page=1',
-		video_name:'°¢ÐÞÂÞ1'
-	},
-	{
-		video_cover:"img/product_22.jpg",
-		video_url:'//static.hdslb.com/miniloader.swf?aid=14193090&page=2',
-		video_name:'°¢ÐÞÂÞ2'
 	}
 ];
 

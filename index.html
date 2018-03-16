@@ -59,8 +59,8 @@
                         <li>
 							<a href="product.html">作品</a>
 							<ul>
-								<li><a href="product.html#video_start">视频</a></li>
-								<li><a href="product.html#img_start">静帧</a></li>
+								<li><a href="product.html#video_2d">二维</a></li>
+								<li><a href="product.html#video_3d">三维</a></li>
 							</ul>
 						</li>
                         <li><a href="joinus.html">招聘</a></li>
@@ -80,11 +80,11 @@
 	</div>
 
 	<div id="playvideo" class="reveal-modal">
-		<!--
-		<video src="" controls="controls">
+
+<!-- 		<video src="" controls="controls">
 			您的浏览器不支持Video标签
-		</video>
-		-->
+		</video> -->
+	
 		<div class="video"></div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>	
@@ -99,8 +99,7 @@
 			//图片路径/链接(数组形式):
 			var images_url = [
 				'img/index-1.gif',
-				//'video/火山动漫DEMOREEL.mp4',
-				'//static.hdslb.com/miniloader.swf?aid=14217629&page=1',
+				'http://player.youku.com/embed/XMzE4Nzc1MjAwOA==',
 				'img/index-2.jpg',
 				'img/index-3.jpg',
 				'img/index-4.jpg'
@@ -134,14 +133,11 @@
 					$('.banner ul li').eq(key).attr("data-reveal-id","playvideo");
 					$('.banner ul li').eq(key).css('background-image','url('+value+')');
 				}else{
-					$('.banner ul li').eq(key).append('<div class="video" style="width:80%;height:100%;margin:auto"></div>');
-					/*
+			
 					$('.banner ul li').eq(key).append(
 						//'<input type="image" src="img/bofang.png"/>' +
-						//'<video src="' + value + '" controls="controls" style="width:100%;height:100%">您的浏览器不支持Video标签</video>'
-						'<embed width="100%" height="100%" type="application/x-shockwave-flash" quality="high" src="' + value + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=0&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>'
+						"<iframe height=100% width=100% src='" + value + "' frameborder=0 'allowfullscreen'></iframe>"
 						);
-					*/
 				}
 			});
 
@@ -280,7 +276,12 @@
 					if(''!=video_url_index){
 						//$('#playvideo video').attr("src", video_url_index);
 						//$('#playvideo video').attr("autoplay","true");
-						$("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
+
+						$("#playvideo .video").html("<iframe height=540 width=960 src='"+ video_url_index + "' frameborder=0 'allowfullscreen'></iframe>");
+
+						$("#playvideo video").attr("autoplay","true");
+
+						// $("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
 						e.preventDefault();
 						var modalLocation = $(this).attr('data-reveal-id');
 						$('#'+modalLocation).reveal($(this).data());
@@ -291,10 +292,10 @@
 			
 			function controlVideo(){
 				if(num == video_index){
-					//$('.banner ul li video')[0].play();
+					$('.banner ul li video')[0].play();
 					$('.banner ul li .video').html('<embed width="100%" height="100%" type="application/x-shockwave-flash" quality="high" src="' + images_url[1] + '" AllowScriptAccess="always" rel="noreferrer" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
 				}else{
-					//$('.banner ul li video')[0].pause();
+					$('.banner ul li video')[0].pause();
 					$('.banner ul li .video').html("");
 				}
 			}
