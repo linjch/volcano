@@ -54,8 +54,8 @@
                         <li class="active">
 							<a href="product.html">作品</a>
 							<ul>
-								<li><a href="product.html#video_start">视频</a></li>
-								<li><a href="product.html#img_start">静帧</a></li>
+								<li><a href="product.html#video_2d">二维</a></li>
+								<li><a href="product.html#video_3d">三维</a></li>
 							</ul>
 						</li>
                         <li><a href="joinus.html">招聘</a></li>
@@ -135,14 +135,57 @@
 	<script src="js/products.js" charset="gbk" type="text/javascript"></script>
 	<script>
 		$(function(){
-			var images_count = video_jason.length;
+			var video_2d_count = video_2d.length;
+			for(var j=0;j<video_2d_count;j++){
+				var video_cover = video_2d[j].video_cover;
+				var video_url = video_2d[j].video_url;
+				var video_name = video_2d[j].video_name;
+				if(j >= video_2d_count){
+					$('.product-list ul').append('<li></li>');
+				}else if('' != video_url && undefined != video_url){
+					var ul_append = '';
+					ul_append += '<li id="video_2d" class="single-product"><img src="' + video_cover + '"/>'
+								+'<div class="product-hover" id="product-hover'+j+'">'
+								+'<span>'+video_name+'</span>'
+								+'<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvideo"/>';
+					ul_append += '</div></li>';
+					$('.product-list ul').append(ul_append);
+				}else{
+					$('.product-list ul').append('<li><img src="' + video_cover + '"/></li>');
+				}
+			}
+			var video_3d_count = video_3d.length;
+			for(var j=0;j<video_3d_count;j++){
+				var video_cover = video_3d[j].video_cover;
+				var video_url = video_3d[j].video_url;
+				var video_name = video_3d[j].video_name;
+				if(j >= video_3d_count){
+					$('.product-list ul').append('<li></li>');
+				}else if('' != video_url && undefined != video_url){
+					var ul_append = '';
+					ul_append += '<li id="video_3d" class="single-product"><img src="' + video_cover + '"/>'
+								+'<div class="product-hover" id="product-hover'+j+'">'
+								+'<span>'+video_name+'</span>'
+								+'<input type="image" id="imgbutton'+j+'" src="img/bofang.png" data-reveal-id="playvideo"/>';
+					ul_append += '</div></li>';
+					$('.product-list ul').append(ul_append);
+				}else{
+					$('.product-list ul').append('<li><img src="' + video_cover + '"/></li>');
+				}
+			}
+			var video_json = [];
+			Array.prototype.push.apply(video_json, video_2d);
+			Array.prototype.push.apply(video_json, video_3d);
+			debugger;
+			/*
+			var images_count = video_json.length;
 			//创建节点
 			//图片列表节点
 			var total_count = Number(images_count) - Number(images_count) % 5 + 5;
 			for(var j=0;j<images_count;j++){
-				var video_cover = video_jason[j].video_cover;
-				var video_url = video_jason[j].video_url;
-				var video_name = video_jason[j].video_name;
+				var video_cover = video_json[j].video_cover;
+				var video_url = video_json[j].video_url;
+				var video_name = video_json[j].video_name;
 				if(j >= images_count){
 					$('.product-list ul').append('<li></li>');
 				}else{
@@ -169,25 +212,26 @@
 					}
 				}
 			}
+			*/
 			$('.product-list ul li img').css('width','100%');
 			$('.product-list ul li img').css('height','100%');
 								
 			$('.product-hover').hover(function(){
 				var index = this.id.replace('product-hover','');
-				if('' != video_jason[index].video_name){
+				if('' != video_json[index].video_name){
 					$('#' + this.id + ' input[type="image"]').show();
 					$('#' + this.id + ' span').show();
 				}
 			});
 			$('.product-hover input[type="image"]').hover(function(){
 				var index = this.id.replace('imgbutton','');
-				if('' != video_jason[index].video_name){
+				if('' != video_json[index].video_name){
 					$('#' + this.id).show();
 				}
 			});
 			$('.product-hover').mouseleave(function(){
 				var index = this.id.replace('product-hover','');
-				if('' != video_jason[index].video_name){
+				if('' != video_json[index].video_name){
 					$('#' + this.id + ' input[type="image"]').hide();
 					$('#' + this.id + ' span').hide();
 				}
@@ -195,8 +239,9 @@
 			
 			$('.product-hover input[type="image"]').click(function(e){
 				var index = this.id.replace('imgbutton','');
-				if('' != video_jason[index].video_name){
-					var video_url_index = video_jason[index].video_url;
+				if('' != video_json[index].video_name){
+					var video_url_index = video_json[index].video_url;
+					/*
 					if(video_url_index.toLowerCase().lastIndexOf(".jpg") > -1
 						|| video_url_index.toLowerCase().lastIndexOf(".jpeg") > -1
 						|| video_url_index.toLowerCase().lastIndexOf(".png") > -1
@@ -219,12 +264,12 @@
 								$("#playimage").css("top", top/2 + "px");
 							}
 						});
-					}else{
+					}else{*/
 						//$("#playvideo .video").html(video_url_index)
 						$("#playvideo .video").html('<embed type="application/x-shockwave-flash" quality="high" src="' + video_url_index + '" flashvars="autoplay=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowfullscreen="true"></embed>');
 						//$("#playvideo video").attr("src", video_url_index);
 						//$("#playvideo video").attr("autoplay","true");
-					}
+					//}
 					e.preventDefault();
 					var modalLocation = $(this).attr('data-reveal-id');
 					$('#'+modalLocation).reveal($(this).data());

@@ -1,4 +1,4 @@
-var video_jason=[
+var video_2d=[
 	{
 		video_cover:"img/product_06.jpg",	//封面图片
 		video_url:'//static.hdslb.com/miniloader.swf?aid=14193479&page=1',	//视频/图片连接
@@ -28,7 +28,10 @@ var video_jason=[
 		video_cover:"img/product_11.jpg",
 		video_url:'//static.hdslb.com/miniloader.swf?aid=14194091&page=1',
 		video_name:'卢卡斯'
-	},
+	}
+];
+
+var video_3d=[
 	{
 		video_cover:"img/product_12.jpg",
 		video_url:'//static.hdslb.com/miniloader.swf?aid=14195132&page=1',
@@ -83,46 +86,6 @@ var video_jason=[
 		video_cover:"img/product_22.jpg",
 		video_url:'//static.hdslb.com/miniloader.swf?aid=14193090&page=2',
 		video_name:'阿修罗2'
-	},
-	{
-		video_cover:"img/product_23.jpg",
-		video_url:'video/思美人Tpose.jpg',
-		video_name:'思美人Tpose'
-	},
-	{
-		video_cover:"img/product_24.jpg",
-		video_url:'video/龙武刀妹Tpose.png',
-		video_name:'龙武刀妹Tpose'
-	},
-	{
-		video_cover:"img/product_25.jpg",
-		video_url:'video/天天枪战Tpose1.png',
-		video_name:'天天枪战Tpose1'
-	},
-	{
-		video_cover:"img/product_26.jpg",
-		video_url:'video/天天枪战Tpose2.png',
-		video_name:'天天枪战Tpose2'
-	},
-	{
-		video_cover:"img/product_27.jpg",
-		video_url:'video/天天枪战Tpose3.png',
-		video_name:'天天枪战Tpose3'
-	},
-	{
-		video_cover:"img/product_28.jpg",
-		video_url:'',
-		video_name:''
-	},
-	{
-		video_cover:"img/product_29.jpg",
-		video_url:'',
-		video_name:''
-	},
-	{
-		video_cover:"img/product_30.jpg",
-		video_url:'',
-		video_name:''
 	}
 ];
 
